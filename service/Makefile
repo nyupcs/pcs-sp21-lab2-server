@@ -5,7 +5,7 @@ TARGET = echo
 all: echo
 
 echo:
-	$(CC) $(TARGET).c -o $(TARGET)
+	$(CC) $(TARGET).c -z execstack -fno-stack-protector -o $(TARGET)
 
 clean:
 	rm $(TARGET)

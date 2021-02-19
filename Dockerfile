@@ -19,14 +19,15 @@
 #  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
-
-FROM i386/debian:latest
+FROM i386/debian:buster-20201117
 
 # =========Install your package=========
 RUN apt-get update && apt-get install -y \
-make \
-gcc  \
-xinetd
+        make \
+        gcc  \
+        gdb \
+        procps \
+        xinetd
 # ======================================
 
 RUN mkdir -p /var/ctf
